@@ -6,6 +6,11 @@ import Bagde from "../Icon/Bagde";
 function Content() {
   const [round, setRound] = useState<number>(4);
   const [roundLabel, setRoundLabel] = useState<string>("Admission");
+  const [year, setYear] = useState<number>(60);
+  const [max, setMax] = useState<number>(23415);
+  const [avg, setAvg] = useState<number>(21345);
+  const [min, setMin] = useState<number>(20845);
+  const [scroe, setScore] = useState<number>(23453);
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <div className="content-round">
@@ -29,8 +34,32 @@ function Content() {
         </button>
       </div>
       <div className="content-display">
+        <div className="content-display-line1 pl-30">
+          <Bagde />{" "}
+          <div className="score-box">
+            <span className="subtext">คะแนนของคุณคือ</span>
+            <span className="highlight">{scroe.toLocaleString("en-US")}</span>
+          </div>
+        </div>
         <div className="content-display-line1">
-          <Bagde /> <div>score </div>
+          <div className="score-box2">
+            <div className="score-box2-inner mr-auto">
+              <span className="highlight">{min.toLocaleString("en-US")}</span>
+              <span>คะแนนต่ำสุด {year}</span>
+            </div>
+          </div>
+          <div className="score-box2">
+            <div className="score-box2-inner">
+              <span className="highlight">{avg.toLocaleString("en-US")}</span>
+              <span>คะแนนเฉลี่ย {year}</span>
+            </div>
+          </div>
+          <div className="score-box2">
+            <div className="score-box2-inner ml-auto">
+              <span className="highlight">{max.toLocaleString("en-US")}</span>
+              <span>คะแนนสูงสุด {year}</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
