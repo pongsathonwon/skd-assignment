@@ -51,6 +51,7 @@
 }
 
 .icon-btn {
+  padding: 1px;
   border: none;
   background: none;
   aspect-ratio: 1;

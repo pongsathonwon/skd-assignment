@@ -1,17 +1,18 @@
+import { useFetch } from "./api";
 import "./App.css";
-import { Content, Header, Social, Stat } from "./components";
+import { Card } from "./components";
 function App() {
-  return (
-    <div className="frame">
-      <Header />
-      <div className="linebreak"></div>
-      <Content />
-      <div className="linebreak"></div>
-      <Stat />
-      <div className="linebreak"></div>
-      <Social />
-    </div>
-  );
+  const { data, error, loading } = useFetch();
+  if (loading) return <div>...loading</div>;
+  if (error && !loading) return <div>somthing went wrong</div>;
+  if (data && !error && !loading)
+    return (
+      <>
+        {data.map((d) => (
+          <Card key={d.id} {...d} />
+        ))}
+      </>
+    );
 }
 
 export default App;
