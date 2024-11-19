@@ -1,5 +1,5 @@
 import "./App.css";
-import { Content, Header } from "./components";
+import { Content, Header, Stat } from "./components";
 function App() {
   return (
     <div className="frame">
@@ -7,7 +7,7 @@ function App() {
       <div className="linebreak"></div>
       <Content />
       <div className="linebreak"></div>
-      <div>score here</div>
+      <Stat />
       <div className="linebreak"></div>
       <div>social here</div>
     </div>

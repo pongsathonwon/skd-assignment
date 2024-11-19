@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
 
   --grapefruit: #ff5a5a;
 }

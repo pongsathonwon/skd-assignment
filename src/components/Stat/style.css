@@ -1,0 +1,20 @@
+.stat {
+  display: flex;
+  gap: 20px;
+}
+
+.stat-triangle {
+  width: 9px;
+  height: 14px;
+  background-color: #48b6a3;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.stat-label {
+  height: 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  text-align: left;
+  color: #48b6a3;
+}
