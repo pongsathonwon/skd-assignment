@@ -2,13 +2,18 @@ import { Faculty } from "../../types/types";
 import Hearticon from "../Icon/Hearticon";
 import "./style.css";
 
-type HeaderProps = { name: string; logo: string; faculty: Faculty };
+export type HeaderProps = { name: string; logo: string; faculty: Faculty };
 
 function Header({ name, logo, faculty }: HeaderProps) {
   return (
     <div className="header">
       <div className="header-left">
-        <img src={logo} className="header-left-img" />
+        <img
+          src={logo}
+          className="header-left-img"
+          alt={`${name}-logo`}
+          data-testid="logo"
+        />
         <div className="header-left-text">
           <span className="header-left-line1 header-left-text-ali">{name}</span>
           <span className="header-left-line2 header-left-text-ali">
