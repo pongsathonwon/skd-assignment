@@ -1,0 +1,12 @@
+.social {
+  display: flex;
+}
+
+.social-label {
+  height: 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1;
+  text-align: left;
+  color: #5f5f5f;
+}
