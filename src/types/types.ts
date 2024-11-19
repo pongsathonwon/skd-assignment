@@ -8,7 +8,7 @@ export type Base = {
 export type Data = Base & {
   logo: string;
   roundSeats: [number, number, number, number, number];
-  score: Score;
+  score: Score | null;
   faculty: Faculty;
   updateAt: DateTime;
   likes: number;
