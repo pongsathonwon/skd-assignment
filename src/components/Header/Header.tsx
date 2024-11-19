@@ -1,4 +1,4 @@
-import Hearticon from "../Icon/hearticon";
+import Hearticon from "../Icon/Hearticon";
 import "./style.css";
 
 function Header() {
