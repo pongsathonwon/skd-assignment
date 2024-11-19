@@ -5,7 +5,7 @@ import EditScoreIcon from "../Icon/EditScoreIcon";
 import Bagde from "../Icon/Bagde";
 import { Data } from "../../types/types";
 
-type ContentProps = Pick<Data, "roundSeats" | "score">;
+export type ContentProps = Pick<Data, "roundSeats" | "score">;
 
 function Content({ roundSeats, score }: ContentProps) {
   const [round, setRound] = useState<number>(4);
@@ -15,7 +15,7 @@ function Content({ roundSeats, score }: ContentProps) {
     <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <div className="content-round">
         <span className="content-label">รอบที่เปิด</span>
-        <div className="indicator-wrapper">
+        <div className="indicator-wrapper" data-testid="indicator">
           {roundSeats.map((s, i) => (
             <Indicator key={i} label={i + 1} isActive={s > 0} />
           ))}
@@ -23,7 +23,7 @@ function Content({ roundSeats, score }: ContentProps) {
       </div>
       <div className="content-score">
         {score ? (
-          <span className="content-score-text">
+          <span className="content-score-text" data-testid="label-text">
             รอบที่ {round} : {score.scoreType}
           </span>
         ) : (
