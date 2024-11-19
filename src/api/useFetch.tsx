@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { Data } from "../types/types";
 
-function Fetch() {
+function useFetch() {
   const [data, setData] = useState<Data[] | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
-    const ctrl = new AbortController();
+    setLoading(true);
+    setError(null);
     const url = "https://tcas-assets.skooldio.com/tmp/mock_tcaster_api.json";
     (async () => {
       try {
-        const resData = await fetch(url, { signal: ctrl.signal });
+        const resData = await fetch(url);
         if (!resData.ok) throw new Error("cannot fetch data");
         const data = (await resData.json()) as Data[];
         setData(data);
@@ -21,11 +23,12 @@ function Fetch() {
         }
         console.error(err.message);
         setError(err.message);
+      } finally {
+        setLoading(false);
       }
     })();
-    return ctrl.abort;
   }, []);
-  return { data, error };
+  return { data, error, loading };
 }
 
-export default Fetch;
+export default useFetch;
