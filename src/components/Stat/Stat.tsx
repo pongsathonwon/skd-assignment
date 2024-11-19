@@ -3,7 +3,7 @@ import "./style.css";
 function Stat() {
   return (
     <div className="stat">
-      <div className="stat-triangle"></div>
+      <div className="stat-triangle" data-testid="arrow"></div>
       <span className="stat-label">ดูสัดส่วนคะแนน</span>
     </div>
   );
