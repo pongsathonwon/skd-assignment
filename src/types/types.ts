@@ -17,14 +17,14 @@ export type Data = Base & {
 export type Score = {
   id: Id;
   year: number;
-  scoreType: "Admission";
+  scoreType: "ADMISSION";
   min: number;
   max: number;
   avg: number;
 };
 
 export type Faculty = Base & {
-  tagId: `${number}`;
+  tagId: Id;
   university: University;
 };
 
