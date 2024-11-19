@@ -1,24 +1,21 @@
+import { Faculty } from "../../types/types";
 import Hearticon from "../Icon/Hearticon";
 import "./style.css";
 
-function Header() {
+type HeaderProps = { name: string; logo: string; faculty: Faculty };
+
+function Header({ name, logo, faculty }: HeaderProps) {
   return (
     <div className="header">
       <div className="header-left">
-        <img
-          src="img/engi.png"
-          srcSet="img/engi@2x.png 2x,img/engi@3x.png 3x"
-          className="header-left-img"
-        />
+        <img src={logo} className="header-left-img" />
         <div className="header-left-text">
-          <span className="header-left-line1 header-left-text-ali">
-            คณะวิศวกรรมศาสตร์
-          </span>
+          <span className="header-left-line1 header-left-text-ali">{name}</span>
           <span className="header-left-line2 header-left-text-ali">
-            สาขาวิศวกรรมทั่วไป
+            {faculty.name}
           </span>
           <span className="header-left-line3 header-left-text-ali">
-            จุฬาลงกรณ์หมาวิทยาลัย
+            {faculty.university.name}
           </span>
         </div>
       </div>
