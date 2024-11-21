@@ -42,7 +42,7 @@ function Content({ roundSeats, score }: ContentProps) {
           </div>
         </div>
         {score ? (
-          <div className="content-display-line1">
+          <div className="content-display-line1" data-testid="history-score">
             <div className="score-box2">
               <div className="score-box2-inner mr-auto">
                 <span className="highlight">

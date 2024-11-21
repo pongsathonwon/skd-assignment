@@ -42,4 +42,32 @@ describe("test content component", () => {
       );
     });
   });
+
+  describe("test content component with score null", () => {
+    const mockProps = {
+      roundSeats: [5, 6, 80, 10, 6],
+      score: null,
+    } satisfies ContentProps;
+
+    beforeEach(() => render(<Content {...mockProps} />));
+    it("should render indicator", () => {
+      const indicators = screen.getByTestId("indicator");
+
+      expect(indicators).toBeInTheDocument();
+      expect(indicators.childElementCount).toBe(mockProps.roundSeats.length);
+    });
+
+    it("should render button", () => {
+      const btn = screen.getByRole("button");
+      expect(btn).toBeInTheDocument();
+      expect(btn).toHaveClass("content-score-btn");
+      expect(btn).toHaveTextContent(/แก้ไขคะแนน/);
+      expect(btn.childElementCount).toBe(1);
+    });
+
+    it("should not render history score", () => {
+      const hist = screen.queryByTestId("history-score");
+      expect(hist).not.toBeInTheDocument();
+    });
+  });
 });
