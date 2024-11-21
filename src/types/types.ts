@@ -10,7 +10,7 @@ export type Data = Base & {
   roundSeats: [number, number, number, number, number];
   score: Score | null;
   faculty: Faculty;
-  updateAt: DateTime;
+  updatedAt: string;
   likes: number;
 };
 

@@ -17,7 +17,7 @@ function Card({
   likes,
 }: CardProps) {
   return (
-    <div className="frame">
+    <div className="frame" data-testid="card">
       <Header {...{ name, logo, faculty }} />
       <div className="linebreak"></div>
       <Content {...{ roundSeats, score }} />
