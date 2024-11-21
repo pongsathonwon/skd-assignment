@@ -7,15 +7,7 @@ import "./style.css";
 
 type CardProps = Data;
 
-function Card({
-  id,
-  name,
-  logo,
-  roundSeats,
-  score,
-  faculty,
-  likes,
-}: CardProps) {
+function Card({ name, logo, roundSeats, score, faculty, likes }: CardProps) {
   return (
     <div className="frame" data-testid="card">
       <Header {...{ name, logo, faculty }} />
